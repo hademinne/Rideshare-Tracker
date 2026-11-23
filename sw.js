@@ -1,7 +1,7 @@
 // Service worker: lets the app open even without internet.
 // When you change any app file, change the number in CACHE (v1 -> v2) too.
 
-const CACHE = "rideshare-v2";
+const CACHE = "rideshare-v3";
 
 const FILES = [
     "./",

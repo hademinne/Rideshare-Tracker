@@ -406,3 +406,16 @@
         font-size: 13px;
     }
 }
+
+
+/* =========================
+   NOTE UNDER A HOME CARD
+========================= */
+
+.card .card-note {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 6px;
+    line-height: 1.5;
+}

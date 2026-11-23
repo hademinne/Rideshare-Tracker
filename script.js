@@ -118,7 +118,7 @@ function renderHome() {
         return entry.date === today;
     });
 
-    let income = 0, fuel = 0, other = 0, km = 0, hours = 0;
+    let income = 0, fuel = 0, other = 0, km = 0, hours = 0, personalKm = 0;
 
     todayDays.forEach(function (entry) {
         income += entry.income;
@@ -126,6 +126,7 @@ function renderHome() {
         other += entry.other;
         km += entry.km;
         hours += entry.hours;
+        personalKm += entry.personalKm || 0;
     });
 
     // Fuel bought on the fuel page today is also counted
@@ -134,7 +135,8 @@ function renderHome() {
     });
 
     const profit = income - fuel - other;
-    const profitPerKm = km > 0 ? profit / km : 0;
+    const paidKm = km - personalKm;
+    const profitPerKm = paidKm > 0 ? profit / paidKm : 0;
 
     document.getElementById("profitValue").textContent = formatNumber(profit);
     document.getElementById("incomeValue").textContent = formatNumber(income);
@@ -143,6 +145,9 @@ function renderHome() {
     document.getElementById("hoursValue").textContent = formatNumber(hours);
     document.getElementById("otherValue").textContent = formatNumber(other);
     document.getElementById("avgValue").textContent = formatNumber(profitPerKm);
+    document.getElementById("distanceNote").textContent = km > 0
+        ? "مدفوعة: " + formatNumber(paidKm) + " | شخصية: " + formatNumber(personalKm)
+        : "";
 }
 
 // ---------- WORK DAYS page ----------
@@ -169,7 +174,12 @@ function buildDayCard(entry) {
     addChip(details, "الدخل", formatNumber(entry.income));
     addChip(details, "البنزين", formatNumber(entry.fuel));
     addChip(details, "مصاريف أخرى", formatNumber(entry.other));
-    addChip(details, "المسافة (كم)", formatNumber(entry.km));
+    const dayPersonalKm = entry.personalKm || 0;
+    addChip(details, "المسافة الكلية (كم)", formatNumber(entry.km));
+    addChip(details, "مدفوعة (كم)", formatNumber(entry.km - dayPersonalKm));
+    if (dayPersonalKm > 0) {
+        addChip(details, "شخصية (كم)", formatNumber(dayPersonalKm));
+    }
     addChip(details, "الساعات", formatNumber(entry.hours));
     card.appendChild(details);
 
@@ -418,7 +428,7 @@ function renderReports() {
     const days = loadList(DAYS_KEY).filter(inRange);
     const fills = loadList(FUEL_KEY).filter(inRange);
 
-    let income = 0, workFuel = 0, other = 0, km = 0, hours = 0, fillSpent = 0;
+    let income = 0, workFuel = 0, other = 0, km = 0, hours = 0, fillSpent = 0, personalKm = 0;
     const perDate = {};
 
     function dateInfo(date) {
@@ -434,6 +444,7 @@ function renderReports() {
         other += entry.other;
         km += entry.km;
         hours += entry.hours;
+        personalKm += entry.personalKm || 0;
         const info = dateInfo(entry.date);
         info.net += entry.income - entry.fuel - entry.other;
         info.hasWork = true;
@@ -446,6 +457,7 @@ function renderReports() {
 
     const fuel = workFuel + fillSpent;
     const net = income - fuel - other;
+    const paidKm = km - personalKm;
 
     let workDays = 0;
     let bestDate = null;
@@ -476,10 +488,11 @@ function renderReports() {
     addReportCard(grid, "الدخل", formatNumber(income) + " أوقية");
     addReportCard(grid, "البنزين", formatNumber(fuel) + " أوقية");
     addReportCard(grid, "مصاريف أخرى", formatNumber(other) + " أوقية");
-    addReportCard(grid, "المسافة", formatNumber(km) + " كم");
+    addReportCard(grid, "المسافة الكلية", formatNumber(km) + " كم",
+        km > 0 ? "مدفوعة " + formatNumber(paidKm) + " | شخصية " + formatNumber(personalKm) : "");
     addReportCard(grid, "ساعات العمل", formatNumber(hours) + " ساعة");
     addReportCard(grid, "أيام العمل", formatNumber(workDays));
-    addReportCard(grid, "ربح/كم", formatNumber(km > 0 ? net / km : 0) + " أوقية");
+    addReportCard(grid, "ربح/كم مدفوع", formatNumber(paidKm > 0 ? net / paidKm : 0) + " أوقية");
     addReportCard(grid, "ربح/ساعة", formatNumber(hours > 0 ? net / hours : 0) + " أوقية");
     if (bestDate !== null) {
         addReportCard(grid, "أفضل يوم", formatNumber(bestNet) + " أوقية", formatDate(bestDate));
@@ -527,6 +540,13 @@ function closeFuelModal() {
 workForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const totalKm = readNumber("workKm");
+    const personalKm = readNumber("workPersonalKm");
+    if (personalKm > totalKm) {
+        alert("المشاوير الشخصية أكبر من المسافة الكلية، راجع الأرقام");
+        return;
+    }
+
     const days = loadList(DAYS_KEY);
     days.push({
         id: newId(),
@@ -534,7 +554,8 @@ workForm.addEventListener("submit", function (event) {
         income: readNumber("workIncome"),
         fuel: readNumber("workFuel"),
         other: readNumber("workOther"),
-        km: readNumber("workKm"),
+        km: totalKm,
+        personalKm: personalKm,
         hours: readNumber("workHours")
     });
     saveList(DAYS_KEY, days);

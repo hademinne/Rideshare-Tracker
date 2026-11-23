@@ -141,6 +141,7 @@
                         </div>
                         <p id="distanceValue">0</p>
                         <span>كم</span>
+                        <small class="card-note" id="distanceNote"></small>
                     </div>
 
                     <div class="card">
@@ -164,7 +165,7 @@
                     <div class="card">
                         <div class="card-header">
                             <span class="card-icon average-icon">◉</span>
-                            <h3>متوسط الربح/كم</h3>
+                            <h3>ربح/كم مدفوع</h3>
                         </div>
                         <p id="avgValue">0</p>
                         <span>أوقية</span>
@@ -368,8 +369,13 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="workKm">المسافة (كم)</label>
+                    <label for="workKm">المسافة الكلية (كم)</label>
                     <input type="number" id="workKm" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-row">
+                    <label for="workPersonalKm">منها مشاوير شخصية أو مجانية (كم)</label>
+                    <input type="number" id="workPersonalKm" min="0" step="any" inputmode="decimal">
                 </div>
 
                 <div class="form-row">
