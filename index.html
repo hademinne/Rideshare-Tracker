@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extra.css">
+    <title>Rideshare Tracker</title>
+    <meta name="theme-color" content="#198754">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+
+        <nav class="sidebar">
+
+            <h2 class="app-title">Rideshare Tracker</h2>
+
+            <ul class="nav-menu">
+
+                <li class="active" data-view="home" data-label="الرئيسية">
+                    <span>⌂</span> الرئيسية
+                </li>
+
+                <li data-view="days" data-label="أيام العمل">
+                    <span>🚘</span> أيام العمل
+                </li>
+
+                <li data-view="fuel" data-label="تعبئة الوقود">
+                    <span>⛽</span> تعبئة الوقود
+                </li>
+
+                <li data-view="reports" data-label="التقارير">
+                    <span>▥ </span> التقارير
+                </li>
+
+                <li data-view="maintenance" data-label="الصيانة">
+                    <span>🔧</span> الصيانة
+                </li>
+
+                <li data-view="settings" data-label="الإعدادات">
+                    <span>⚙</span> الإعدادات
+                </li>
+
+            </ul>
+
+            <div class="car-info">
+
+                <div class="car-image">🚙</div>
+
+                <h3>Toyota RAV4</h3>
+
+                <p>2003 - 2.4L</p>
+
+            </div>
+
+        </nav>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- MOBILE HEADER -->
+
+            <div class="mobile-header">
+
+                <h2>Rideshare Tracker</h2>
+
+                <span class="notification-icon">🔔</span>
+
+            </div>
+
+
+            <!-- ======================
+                 VIEW: HOME
+            ====================== -->
+
+            <section class="view" id="view-home">
+
+                <header class="header">
+
+                    <h1>ملخص اليوم</h1>
+
+                    <div class="date" id="headerDate">
+                        📅
+                    </div>
+
+                </header>
+
+
+                <!-- PROFIT CARD -->
+
+                <section class="profit-card">
+
+                    <p>المتبقي بعد خصم البنزين والمصاريف</p>
+
+                    <h2>
+                        <span id="profitValue">0</span>
+                        <small>أوقية</small>
+                    </h2>
+
+                    <span>صافي الربح لليوم</span>
+
+                </section>
+
+
+                <!-- STATISTICS -->
+
+                <section class="stats-container">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon income-icon">▣</span>
+                            <h3>الدخل</h3>
+                        </div>
+                        <p id="incomeValue">0</p>
+                        <span>أوقية</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon fuel-icon">⛽</span>
+                            <h3>البنزين</h3>
+                        </div>
+                        <p id="fuelValue">0</p>
+                        <span>أوقية</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon distance-icon">🛣️</span>
+                            <h3>المسافة</h3>
+                        </div>
+                        <p id="distanceValue">0</p>
+                        <span>كم</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon hours-icon">◷</span>
+                            <h3>ساعات العمل</h3>
+                        </div>
+                        <p id="hoursValue">0</p>
+                        <span>ساعات</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon expenses-icon">▤</span>
+                            <h3>مصاريف أخرى</h3>
+                        </div>
+                        <p id="otherValue">0</p>
+                        <span>أوقية</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon average-icon">◉</span>
+                            <h3>متوسط الربح/كم</h3>
+                        </div>
+                        <p id="avgValue">0</p>
+                        <span>أوقية</span>
+                    </div>
+
+                </section>
+
+
+                <!-- ADD WORK -->
+
+                <section class="add-work" id="addWorkButton">
+
+                    <div class="plus-icon">+</div>
+
+                    <h2>إضافة يوم عمل</h2>
+
+                    <p>سجل تفاصيل يوم عمل جديد</p>
+
+                </section>
+
+
+                <!-- FOOTER -->
+
+                <footer class="footer-note">
+
+                    <span>ⓘ</span>
+
+                    استمر في تسجيل بياناتك يومياً للحصول على تقارير دقيقة
+                    لأرباحك ومصاريفك.
+
+                </footer>
+
+            </section>
+
+
+            <!-- ======================
+                 VIEW: WORK DAYS
+            ====================== -->
+
+            <section class="view hidden" id="view-days">
+
+                <header class="header">
+                    <h1>أيام العمل</h1>
+                    <button type="button" class="page-btn" id="addWorkTop">+ إضافة</button>
+                </header>
+
+                <div class="summary-row">
+                    <div class="summary-card">
+                        <span>عدد الأيام</span>
+                        <strong id="daysCount">0</strong>
+                    </div>
+                    <div class="summary-card">
+                        <span>إجمالي صافي الربح</span>
+                        <strong id="daysProfit">0</strong>
+                    </div>
+                </div>
+
+                <div class="list" id="daysList"></div>
+
+            </section>
+
+
+            <!-- ======================
+                 VIEW: FUEL
+            ====================== -->
+
+            <section class="view hidden" id="view-fuel">
+
+                <header class="header">
+                    <h1>تعبئة الوقود</h1>
+                    <button type="button" class="page-btn" id="addFuelTop">+ إضافة</button>
+                </header>
+
+                <div class="summary-row">
+                    <div class="summary-card">
+                        <span>إجمالي المصروف</span>
+                        <strong id="fuelTotalSpent">0</strong>
+                    </div>
+                    <div class="summary-card">
+                        <span>إجمالي اللترات</span>
+                        <strong id="fuelTotalLiters">0</strong>
+                    </div>
+                </div>
+
+                <div class="list" id="fuelList"></div>
+
+            </section>
+
+
+            <!-- ======================
+                 VIEW: COMING SOON
+            ====================== -->
+
+            <section class="view hidden" id="view-reports">
+
+                <header class="header">
+                    <h1>التقارير</h1>
+                </header>
+
+                <div class="period-tabs">
+                    <button type="button" class="period-btn active" data-period="week">آخر 7 أيام</button>
+                    <button type="button" class="period-btn" data-period="month">هذا الشهر</button>
+                    <button type="button" class="period-btn" data-period="all">الكل</button>
+                </div>
+
+                <section class="profit-card">
+                    <p>صافي الربح بعد خصم البنزين والمصاريف</p>
+                    <h2 id="repNetBox">
+                        <span id="repNet">0</span>
+                        <small>أوقية</small>
+                    </h2>
+                    <span id="repRange"></span>
+                </section>
+
+                <div class="report-grid" id="reportGrid"></div>
+
+                <div class="chart-box">
+                    <h3 id="chartTitle"></h3>
+                    <div class="chart" id="reportChart"></div>
+                </div>
+
+            </section>
+
+
+            <section class="view hidden" id="view-soon">
+
+                <header class="header">
+                    <h1 id="soonTitle"></h1>
+                </header>
+
+                <div class="empty-box">هذه الصفحة قريباً</div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+
+    <nav class="bottom-nav">
+
+        <div class="bottom-nav-item active" data-view="home" data-label="الرئيسية">
+            <span>⌂</span>
+            <small>الرئيسية</small>
+        </div>
+
+        <div class="bottom-nav-item" data-view="days" data-label="أيام العمل">
+            <span>🚘</span>
+            <small>أيام العمل</small>
+        </div>
+
+        <div class="bottom-nav-item" data-view="fuel" data-label="تعبئة الوقود">
+            <span>⛽</span>
+            <small>تعبئة الوقود</small>
+        </div>
+
+        <div class="bottom-nav-item" data-view="reports" data-label="التقارير">
+            <span>▥</span>
+            <small>التقارير</small>
+        </div>
+
+        <div class="bottom-nav-item" data-view="maintenance" data-label="الصيانة">
+            <span>🔧</span>
+            <small>الصيانة</small>
+        </div>
+
+    </nav>
+
+
+    <!-- ADD WORK DAY POPUP -->
+
+    <div class="modal-overlay hidden" id="workModal">
+
+        <div class="modal-box">
+
+            <h2>إضافة يوم عمل</h2>
+
+            <form id="workForm">
+
+                <div class="form-row">
+                    <label for="workDate">التاريخ</label>
+                    <input type="date" id="workDate" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="workIncome">الدخل (أوقية)</label>
+                    <input type="number" id="workIncome" min="0" step="any" inputmode="decimal" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="workFuel">البنزين (أوقية)</label>
+                    <input type="number" id="workFuel" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-row">
+                    <label for="workOther">مصاريف أخرى (أوقية)</label>
+                    <input type="number" id="workOther" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-row">
+                    <label for="workKm">المسافة (كم)</label>
+                    <input type="number" id="workKm" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-row">
+                    <label for="workHours">ساعات العمل</label>
+                    <input type="number" id="workHours" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">حفظ</button>
+                    <button type="button" class="btn-cancel" id="cancelButton">إلغاء</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADD FUEL POPUP -->
+
+    <div class="modal-overlay hidden" id="fuelModal">
+
+        <div class="modal-box">
+
+            <h2>إضافة تعبئة وقود</h2>
+
+            <form id="fuelForm">
+
+                <div class="form-row">
+                    <label for="fuelDate">التاريخ</label>
+                    <input type="date" id="fuelDate" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="fuelAmount">المبلغ المدفوع (أوقية)</label>
+                    <input type="number" id="fuelAmount" min="0" step="any" inputmode="decimal" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="fuelLiters">الكمية (لتر) - اختياري</label>
+                    <input type="number" id="fuelLiters" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">حفظ</button>
+                    <button type="button" class="btn-cancel" id="fuelCancelButton">إلغاء</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #263238;
+    direction: rtl;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: white;
+    padding: 30px 20px;
+    border-left: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    font-size: 20px;
+    text-align: center;
+    direction: ltr;
+    margin-bottom: 50px;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-menu li.active {
+    background: #e8f5ed;
+    color: #198754;
+    font-weight: bold;
+}
+
+.nav-menu li:hover {
+    background: #f0f8f2;
+}
+
+.nav-menu li span {
+    font-size: 20px;
+}
+
+
+/* =========================
+   CAR INFORMATION
+========================= */
+
+.car-info {
+    margin-top: auto;
+    padding: 15px;
+    background: #f5f6fa;
+    border-radius: 10px;
+}
+
+.car-image {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.car-info h3 {
+    margin-bottom: 8px;
+}
+
+.car-info p {
+    color: #777;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+}
+
+.mobile-header {
+    display: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #777;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+
+/* =========================
+   PROFIT CARD
+========================= */
+
+.profit-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+.profit-card p {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.profit-card h2 {
+    font-size: 42px;
+    color: #198754;
+    margin-bottom: 15px;
+}
+
+.profit-card h2 small {
+    font-size: 20px;
+}
+
+.profit-card > span {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    min-width: 0;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    color: #777;
+}
+
+.card-icon {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.income-icon {
+    color: #198754;
+}
+
+.fuel-icon {
+    color: #dc3545;
+}
+
+.distance-icon {
+    color: #315b85;
+}
+
+.hours-icon {
+    color: #7952a3;
+}
+
+.expenses-icon {
+    color: #e58b35;
+}
+
+.average-icon {
+    color: #3676b5;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card > span {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   ADD WORK
+========================= */
+
+.add-work {
+    background: #f0f8f2;
+    border: 1px dashed #198754;
+    border-radius: 12px;
+    padding: 35px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.plus-icon {
+    width: 60px;
+    height: 60px;
+    background: #198754;
+    color: white;
+    font-size: 45px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-work h2 {
+    color: #198754;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.add-work p {
+    color: #777;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-note {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-note span {
+    color: #198754;
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav {
+    display: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background: white;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 0 15px 100px;
+    }
+
+
+    /* MOBILE HEADER */
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px;
+        margin-bottom: 25px;
+    }
+
+    .mobile-header h2 {
+        font-size: 19px;
+        direction: ltr;
+    }
+
+    .notification-icon {
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+
+    /* PAGE HEADER */
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .date {
+        font-size: 12px;
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+
+    /* PROFIT */
+
+    .profit-card {
+        padding: 25px 12px;
+        margin-bottom: 20px;
+    }
+
+    .profit-card p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .profit-card h2 {
+        font-size: 38px;
+        margin-bottom: 12px;
+    }
+
+    .profit-card h2 small {
+        font-size: 18px;
+    }
+
+    .profit-card > span {
+        font-size: 13px;
+    }
+
+
+    /* STATISTICS */
+
+    .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 16px 12px;
+        min-height: 145px;
+    }
+
+    .card-header {
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .card-header h3 {
+        font-size: 13px;
+    }
+
+    .card-icon {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .card > span {
+        font-size: 12px;
+    }
+
+
+    /* ADD WORK */
+
+    .add-work {
+        padding: 20px 12px;
+        margin-bottom: 20px;
+    }
+
+    .plus-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+    .add-work h2 {
+        font-size: 19px;
+    }
+
+    .add-work p {
+        font-size: 13px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-note {
+        font-size: 13px;
+    }
+
+
+    /* BOTTOM NAVIGATION */
+
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+        justify-content: space-around;
+        align-items: center;
+
+        background: white;
+        padding: 12px 3px 15px;
+
+        border-top: 1px solid #eeeeee;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .bottom-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        color: #777;
+        cursor: pointer;
+        font-size: 21px;
+        min-width: 55px;
+    }
+
+    .bottom-nav-item small {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .bottom-nav-item.active {
+        color: #198754;
+        font-weight: bold;
+    }
+
+}
+
+    
