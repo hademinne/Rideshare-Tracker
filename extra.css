@@ -495,3 +495,270 @@
 .backup-status.error {
     color: #dc3545;
 }
+
+
+/* =========================
+   ICONS (SVG)
+========================= */
+
+.icon-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    vertical-align: -0.15em;
+}
+
+.nav-menu li span,
+.bottom-nav-item span,
+.card-icon,
+.notification-icon,
+.footer-note span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.car-image {
+    color: #198754;
+}
+
+.settings-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.settings-btn .icon {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================
+   MAINTENANCE PAGE
+========================= */
+
+.backup-reminder.maint-reminder {
+    background: #fdecea;
+    border-color: #f1b7b3;
+    color: #8a1f17;
+}
+
+.odo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 10px;
+}
+
+.odo-card span {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.odo-card strong {
+    font-size: 26px;
+}
+
+.odo-btn {
+    background: white;
+    color: #198754;
+    border: 1px solid #198754;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.odo-note {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 17px;
+    margin: 25px 0 14px;
+    color: #263238;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.badge.ok {
+    background: #e8f5ed;
+    color: #198754;
+}
+
+.badge.soon {
+    background: #fff3e0;
+    color: #b26a00;
+}
+
+.badge.late {
+    background: #fdecea;
+    color: #c62828;
+}
+
+.badge.none {
+    background: #eceff1;
+    color: #607d8b;
+}
+
+.progress {
+    height: 8px;
+    background: #eceff1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.progress .fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.fill.ok,
+.fill.brand {
+    background: #198754;
+}
+
+.fill.soon {
+    background: #f0a030;
+}
+
+.fill.late {
+    background: #dc3545;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.small-btn {
+    padding: 9px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d5d9de;
+    background: white;
+    color: #555;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.small-btn.primary {
+    background: #198754;
+    border-color: #198754;
+    color: white;
+    font-weight: bold;
+}
+
+.list-note {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.break-row {
+    margin-bottom: 16px;
+}
+
+.break-row:last-child {
+    margin-bottom: 0;
+}
+
+.break-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.break-top span:last-child {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.break-row .progress {
+    margin-bottom: 4px;
+}
+
+.break-count {
+    font-size: 12px;
+    color: #999;
+}
+
+.empty-text {
+    color: #777;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 14px;
+}
+
+.settings-btn.btn-danger {
+    background: #fdecea;
+    color: #c62828;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+
+    .odo-card {
+        padding: 14px 12px;
+    }
+
+    .odo-card strong {
+        font-size: 21px;
+    }
+
+    .odo-btn {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .item-actions .small-btn {
+        flex: 1;
+    }
+
+    .section-title {
+        margin-top: 20px;
+    }
+}

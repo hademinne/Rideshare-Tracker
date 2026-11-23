@@ -14,6 +14,106 @@
 </head>
 <body>
 
+    <!-- ======================
+         ICONS (drawn once here, then reused anywhere by their id)
+    ====================== -->
+
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+
+        <symbol id="i-home" viewBox="0 0 24 24">
+            <path d="M3 11.5 12 4l9 7.5"/>
+            <path d="M5.5 10v10h13V10"/>
+            <path d="M10 20v-6h4v6"/>
+        </symbol>
+
+        <symbol id="i-car" viewBox="0 0 24 24">
+            <path d="M5 11l1.6-4.2A2 2 0 0 1 8.5 5.5h7a2 2 0 0 1 1.9 1.3L19 11"/>
+            <rect x="3" y="11" width="18" height="6.5" rx="2"/>
+            <path d="M6.5 17.5V20M17.5 17.5V20"/>
+            <path d="M7.5 14.2h.01M16.5 14.2h.01"/>
+        </symbol>
+
+        <symbol id="i-fuel" viewBox="0 0 24 24">
+            <path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/>
+            <path d="M3 21h12"/>
+            <path d="M7 8h4"/>
+            <path d="M14 11h2a2 2 0 0 1 2 2v3.5a1.5 1.5 0 0 0 3 0V9.5L18.5 7"/>
+        </symbol>
+
+        <symbol id="i-chart" viewBox="0 0 24 24">
+            <path d="M4 4v16h16"/>
+            <path d="M8 16v-4M12 16V8M16 16v-6"/>
+        </symbol>
+
+        <symbol id="i-wrench" viewBox="0 0 24 24">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </symbol>
+
+        <symbol id="i-sliders" viewBox="0 0 24 24">
+            <path d="M4 7h9M17 7h3M4 17h3M11 17h9"/>
+            <circle cx="15" cy="7" r="2"/>
+            <circle cx="9" cy="17" r="2"/>
+        </symbol>
+
+        <symbol id="i-wallet" viewBox="0 0 24 24">
+            <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18"/>
+            <rect x="3" y="7" width="18" height="13" rx="2.5"/>
+            <path d="M16 13.5h2"/>
+        </symbol>
+
+        <symbol id="i-road" viewBox="0 0 24 24">
+            <path d="M8.5 3 5 21M15.5 3 19 21"/>
+            <path d="M12 4v3M12 10.5v3M12 17v3"/>
+        </symbol>
+
+        <symbol id="i-clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5.2l3.2 1.8"/>
+        </symbol>
+
+        <symbol id="i-receipt" viewBox="0 0 24 24">
+            <path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/>
+            <path d="M9.5 8h5M9.5 12h5"/>
+        </symbol>
+
+        <symbol id="i-gauge" viewBox="0 0 24 24">
+            <path d="M4 17a8 8 0 1 1 16 0"/>
+            <path d="M12 17l3.8-5"/>
+            <circle cx="12" cy="17" r="1"/>
+        </symbol>
+
+        <symbol id="i-calendar" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="2.5"/>
+            <path d="M3 10h18M8 3v4M16 3v4"/>
+        </symbol>
+
+        <symbol id="i-info" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 11v5"/>
+            <path d="M12 8h.01"/>
+        </symbol>
+
+        <symbol id="i-save" viewBox="0 0 24 24">
+            <path d="M5 3h11l3 3v15H5z"/>
+            <path d="M8 3v5h7V3"/>
+            <path d="M8 21v-7h8v7"/>
+        </symbol>
+
+        <symbol id="i-share" viewBox="0 0 24 24">
+            <path d="M12 15V4"/>
+            <path d="M8 8l4-4 4 4"/>
+            <path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/>
+        </symbol>
+
+        <symbol id="i-restore" viewBox="0 0 24 24">
+            <path d="M12 4v11"/>
+            <path d="M8 11l4 4 4-4"/>
+            <path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/>
+        </symbol>
+
+    </svg>
+
+
     <div class="app-container">
 
         <!-- SIDEBAR -->
@@ -25,34 +125,34 @@
             <ul class="nav-menu">
 
                 <li class="active" data-view="home" data-label="الرئيسية">
-                    <span>⌂</span> الرئيسية
+                    <span><svg class="icon"><use href="#i-home"/></svg></span> الرئيسية
                 </li>
 
                 <li data-view="days" data-label="أيام العمل">
-                    <span>🚘</span> أيام العمل
+                    <span><svg class="icon"><use href="#i-car"/></svg></span> أيام العمل
                 </li>
 
                 <li data-view="fuel" data-label="تعبئة الوقود">
-                    <span>⛽</span> تعبئة الوقود
+                    <span><svg class="icon"><use href="#i-fuel"/></svg></span> تعبئة الوقود
                 </li>
 
                 <li data-view="reports" data-label="التقارير">
-                    <span>▥ </span> التقارير
+                    <span><svg class="icon"><use href="#i-chart"/></svg></span> التقارير
                 </li>
 
                 <li data-view="maintenance" data-label="الصيانة">
-                    <span>🔧</span> الصيانة
+                    <span><svg class="icon"><use href="#i-wrench"/></svg></span> الصيانة
                 </li>
 
                 <li data-view="settings" data-label="الإعدادات">
-                    <span>⚙</span> الإعدادات
+                    <span><svg class="icon"><use href="#i-sliders"/></svg></span> الإعدادات
                 </li>
 
             </ul>
 
             <div class="car-info">
 
-                <div class="car-image">🚙</div>
+                <div class="car-image"><svg class="icon"><use href="#i-car"/></svg></div>
 
                 <h3>Toyota RAV4</h3>
 
@@ -74,7 +174,7 @@
 
                 <h2>Rideshare Tracker</h2>
 
-                <span class="notification-icon" data-view="settings" data-label="الإعدادات">⚙️</span>
+                <span class="notification-icon" data-view="settings" data-label="الإعدادات"><svg class="icon"><use href="#i-sliders"/></svg></span>
 
             </div>
 
@@ -89,8 +189,9 @@
 
                     <h1>ملخص اليوم</h1>
 
-                    <div class="date" id="headerDate">
-                        📅
+                    <div class="date">
+                        <svg class="icon"><use href="#i-calendar"/></svg>
+                        <span id="headerDate"></span>
                     </div>
 
                 </header>
@@ -118,7 +219,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon income-icon">▣</span>
+                            <span class="card-icon income-icon"><svg class="icon"><use href="#i-wallet"/></svg></span>
                             <h3>الدخل</h3>
                         </div>
                         <p id="incomeValue">0</p>
@@ -127,7 +228,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon fuel-icon">⛽</span>
+                            <span class="card-icon fuel-icon"><svg class="icon"><use href="#i-fuel"/></svg></span>
                             <h3>البنزين</h3>
                         </div>
                         <p id="fuelValue">0</p>
@@ -136,7 +237,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon distance-icon">🛣️</span>
+                            <span class="card-icon distance-icon"><svg class="icon"><use href="#i-road"/></svg></span>
                             <h3>المسافة</h3>
                         </div>
                         <p id="distanceValue">0</p>
@@ -146,7 +247,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon hours-icon">◷</span>
+                            <span class="card-icon hours-icon"><svg class="icon"><use href="#i-clock"/></svg></span>
                             <h3>ساعات العمل</h3>
                         </div>
                         <p id="hoursValue">0</p>
@@ -155,7 +256,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon expenses-icon">▤</span>
+                            <span class="card-icon expenses-icon"><svg class="icon"><use href="#i-receipt"/></svg></span>
                             <h3>مصاريف أخرى</h3>
                         </div>
                         <p id="otherValue">0</p>
@@ -164,7 +265,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-icon average-icon">◉</span>
+                            <span class="card-icon average-icon"><svg class="icon"><use href="#i-gauge"/></svg></span>
                             <h3>ربح/كم مدفوع</h3>
                         </div>
                         <p id="avgValue">0</p>
@@ -187,8 +288,10 @@
                 </section>
 
 
+                <div class="backup-reminder maint-reminder hidden" id="maintReminder" data-view="maintenance" data-label="الصيانة"></div>
+
                 <div class="backup-reminder hidden" id="backupReminder" data-view="settings" data-label="الإعدادات">
-                    💾 لم تحفظ نسخة احتياطية منذ مدة. اضغط هنا لحفظ نسخة من بياناتك.
+                    لم تحفظ نسخة احتياطية منذ مدة. اضغط هنا لحفظ نسخة من بياناتك.
                 </div>
 
 
@@ -196,7 +299,7 @@
 
                 <footer class="footer-note">
 
-                    <span>ⓘ</span>
+                    <span><svg class="icon"><use href="#i-info"/></svg></span>
 
                     استمر في تسجيل بياناتك يومياً للحصول على تقارير دقيقة
                     لأرباحك ومصاريفك.
@@ -261,7 +364,7 @@
 
 
             <!-- ======================
-                 VIEW: COMING SOON
+                 VIEW: REPORTS
             ====================== -->
 
             <section class="view hidden" id="view-reports">
@@ -295,6 +398,52 @@
             </section>
 
 
+            <!-- ======================
+                 VIEW: MAINTENANCE
+            ====================== -->
+
+            <section class="view hidden" id="view-maintenance">
+
+                <header class="header">
+                    <h1>الصيانة</h1>
+                    <button type="button" class="page-btn" id="addItemButton">+ بند</button>
+                </header>
+
+                <div class="odo-card">
+                    <div>
+                        <span>عدّاد السيارة الحالي</span>
+                        <strong id="odoValue">-</strong>
+                    </div>
+                    <button type="button" class="odo-btn" id="odoButton">تحديد القراءة</button>
+                </div>
+                <p class="odo-note" id="odoNote"></p>
+
+                <div class="summary-row">
+                    <div class="summary-card">
+                        <span>إجمالي مصاريف الصيانة (أوقية)</span>
+                        <strong id="maintTotal">0</strong>
+                    </div>
+                    <div class="summary-card">
+                        <span>مصاريف هذا الشهر (أوقية)</span>
+                        <strong id="maintMonth">0</strong>
+                    </div>
+                </div>
+
+                <div class="list" id="maintItems"></div>
+
+                <h3 class="section-title">المصاريف حسب البند</h3>
+                <div class="chart-box" id="maintBreakdown"></div>
+
+                <h3 class="section-title">سجل الصيانة</h3>
+                <div class="list" id="maintHistory"></div>
+
+            </section>
+
+
+            <!-- ======================
+                 VIEW: SETTINGS
+            ====================== -->
+
             <section class="view hidden" id="view-settings">
 
                 <header class="header">
@@ -315,9 +464,9 @@
                     <p class="settings-text" id="lastBackupText"></p>
 
                     <div class="settings-buttons">
-                        <button type="button" class="btn-save settings-btn" id="exportButton">💾 حفظ نسخة احتياطية</button>
-                        <button type="button" class="settings-btn secondary hidden" id="shareButton">📤 مشاركة النسخة (واتساب ...)</button>
-                        <button type="button" class="settings-btn secondary" id="importButton">📥 استرجاع من نسخة</button>
+                        <button type="button" class="btn-save settings-btn" id="exportButton"><svg class="icon"><use href="#i-save"/></svg> حفظ نسخة احتياطية</button>
+                        <button type="button" class="settings-btn secondary hidden" id="shareButton"><svg class="icon"><use href="#i-share"/></svg> مشاركة النسخة (واتساب ...)</button>
+                        <button type="button" class="settings-btn secondary" id="importButton"><svg class="icon"><use href="#i-restore"/></svg> استرجاع من نسخة</button>
                     </div>
 
                     <input type="file" id="importFile" class="hidden" accept=".json,application/json,text/plain">
@@ -355,27 +504,27 @@
     <nav class="bottom-nav">
 
         <div class="bottom-nav-item active" data-view="home" data-label="الرئيسية">
-            <span>⌂</span>
+            <span><svg class="icon"><use href="#i-home"/></svg></span>
             <small>الرئيسية</small>
         </div>
 
         <div class="bottom-nav-item" data-view="days" data-label="أيام العمل">
-            <span>🚘</span>
+            <span><svg class="icon"><use href="#i-car"/></svg></span>
             <small>أيام العمل</small>
         </div>
 
         <div class="bottom-nav-item" data-view="fuel" data-label="تعبئة الوقود">
-            <span>⛽</span>
+            <span><svg class="icon"><use href="#i-fuel"/></svg></span>
             <small>تعبئة الوقود</small>
         </div>
 
         <div class="bottom-nav-item" data-view="reports" data-label="التقارير">
-            <span>▥</span>
+            <span><svg class="icon"><use href="#i-chart"/></svg></span>
             <small>التقارير</small>
         </div>
 
         <div class="bottom-nav-item" data-view="maintenance" data-label="الصيانة">
-            <span>🔧</span>
+            <span><svg class="icon"><use href="#i-wrench"/></svg></span>
             <small>الصيانة</small>
         </div>
 
@@ -467,6 +616,113 @@
                 <div class="form-buttons">
                     <button type="submit" class="btn-save">حفظ</button>
                     <button type="button" class="btn-cancel" id="fuelCancelButton">إلغاء</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECORD MAINTENANCE POPUP -->
+
+    <div class="modal-overlay hidden" id="serviceModal">
+
+        <div class="modal-box">
+
+            <h2 id="serviceTitle">تسجيل صيانة</h2>
+
+            <form id="serviceForm">
+
+                <input type="hidden" id="serviceItemId">
+
+                <div class="form-row">
+                    <label for="serviceDate">التاريخ</label>
+                    <input type="date" id="serviceDate" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="serviceKm">قراءة العدّاد وقت الصيانة (كم)</label>
+                    <input type="number" id="serviceKm" min="0" step="any" inputmode="decimal" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="serviceCost">التكلفة (أوقية)</label>
+                    <input type="number" id="serviceCost" min="0" step="any" inputmode="decimal">
+                </div>
+
+                <div class="form-row">
+                    <label for="serviceNote">ملاحظة (اختياري)</label>
+                    <input type="text" id="serviceNote" maxlength="120">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">حفظ</button>
+                    <button type="button" class="btn-cancel" id="serviceCancelButton">إلغاء</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADD / EDIT MAINTENANCE ITEM POPUP -->
+
+    <div class="modal-overlay hidden" id="itemModal">
+
+        <div class="modal-box">
+
+            <h2 id="itemTitle">إضافة بند صيانة</h2>
+
+            <form id="itemForm">
+
+                <input type="hidden" id="itemId">
+
+                <div class="form-row">
+                    <label for="itemName">اسم البند</label>
+                    <input type="text" id="itemName" maxlength="40" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="itemInterval">يُصان كل كم كيلومتر؟</label>
+                    <input type="number" id="itemInterval" min="1" step="any" inputmode="decimal" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">حفظ</button>
+                    <button type="button" class="btn-cancel" id="itemCancelButton">إلغاء</button>
+                </div>
+
+                <button type="button" class="settings-btn btn-danger hidden" id="itemDeleteButton">حذف هذا البند</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ODOMETER POPUP -->
+
+    <div class="modal-overlay hidden" id="odoModal">
+
+        <div class="modal-box">
+
+            <h2>قراءة عدّاد السيارة</h2>
+
+            <form id="odoForm">
+
+                <div class="form-row">
+                    <label for="odoInput">القراءة الحالية (كم)</label>
+                    <input type="number" id="odoInput" min="0" step="any" inputmode="decimal" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">حفظ</button>
+                    <button type="button" class="btn-cancel" id="odoCancelButton">إلغاء</button>
                 </div>
 
             </form>
