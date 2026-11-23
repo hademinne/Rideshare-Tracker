@@ -74,7 +74,7 @@
 
                 <h2>Rideshare Tracker</h2>
 
-                <span class="notification-icon">🔔</span>
+                <span class="notification-icon" data-view="settings" data-label="الإعدادات">⚙️</span>
 
             </div>
 
@@ -187,6 +187,11 @@
                 </section>
 
 
+                <div class="backup-reminder hidden" id="backupReminder" data-view="settings" data-label="الإعدادات">
+                    💾 لم تحفظ نسخة احتياطية منذ مدة. اضغط هنا لحفظ نسخة من بياناتك.
+                </div>
+
+
                 <!-- FOOTER -->
 
                 <footer class="footer-note">
@@ -285,6 +290,45 @@
                 <div class="chart-box">
                     <h3 id="chartTitle"></h3>
                     <div class="chart" id="reportChart"></div>
+                </div>
+
+            </section>
+
+
+            <section class="view hidden" id="view-settings">
+
+                <header class="header">
+                    <h1>الإعدادات</h1>
+                </header>
+
+                <div class="settings-box">
+
+                    <h3>النسخ الاحتياطي</h3>
+
+                    <p class="settings-text">
+                        بياناتك محفوظة على هذا الهاتف فقط. احفظ نسخة منها في ملف،
+                        وأرسلها لنفسك على واتساب أو ضعها في Google Drive، حتى تستطيع
+                        استرجاعها إذا ضاعت أو إذا غيّرت الهاتف.
+                    </p>
+
+                    <p class="settings-text" id="dataSummary"></p>
+                    <p class="settings-text" id="lastBackupText"></p>
+
+                    <div class="settings-buttons">
+                        <button type="button" class="btn-save settings-btn" id="exportButton">💾 حفظ نسخة احتياطية</button>
+                        <button type="button" class="settings-btn secondary hidden" id="shareButton">📤 مشاركة النسخة (واتساب ...)</button>
+                        <button type="button" class="settings-btn secondary" id="importButton">📥 استرجاع من نسخة</button>
+                    </div>
+
+                    <input type="file" id="importFile" class="hidden" accept=".json,application/json,text/plain">
+
+                    <p class="backup-status" id="backupStatus"></p>
+
+                    <p class="settings-text small">
+                        الاسترجاع يضيف ما في الملف إلى بياناتك الحالية، ولا يحذف شيئاً
+                        ولا يكرر ما هو موجود.
+                    </p>
+
                 </div>
 
             </section>

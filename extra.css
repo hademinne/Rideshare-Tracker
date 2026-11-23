@@ -419,3 +419,79 @@
     margin-top: 6px;
     line-height: 1.5;
 }
+
+
+/* =========================
+   SETTINGS / BACKUP
+========================= */
+
+.backup-reminder {
+    background: #fff8e6;
+    border: 1px solid #f3d98a;
+    color: #7a5b00;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.settings-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px 20px;
+    max-width: 560px;
+}
+
+.settings-box h3 {
+    color: #198754;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.settings-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.settings-text.small {
+    color: #888;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.settings-buttons {
+    margin-top: 16px;
+}
+
+.settings-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.settings-btn.secondary {
+    background: #eceff1;
+    color: #263238;
+}
+
+.backup-status {
+    color: #198754;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.backup-status.error {
+    color: #dc3545;
+}
