@@ -552,8 +552,9 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="workFuel">البنزين (أوقية)</label>
+                    <label for="workFuel">بنزين لم تسجله في صفحة الوقود (أوقية)</label>
                     <input type="number" id="workFuel" min="0" step="any" inputmode="decimal">
+                    <small class="field-hint" id="workFuelHint"></small>
                 </div>
 
                 <div class="form-row">
@@ -731,7 +732,15 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <!-- The app code, split into one file per page. The order matters: core first, app last. -->
+    <script src="core.js"></script>
+    <script src="home.js"></script>
+    <script src="days.js"></script>
+    <script src="fuel.js"></script>
+    <script src="reports.js"></script>
+    <script src="maintenance.js"></script>
+    <script src="backup.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>

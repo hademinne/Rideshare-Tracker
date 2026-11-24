@@ -762,3 +762,34 @@
         margin-top: 20px;
     }
 }
+
+
+/* =========================
+   HINT UNDER A FORM FIELD
+========================= */
+
+.field-hint {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 6px;
+}
+
+
+/* =========================
+   MISSING FILES WARNING
+========================= */
+
+.missing-banner {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: #fdecea;
+    color: #8a1f17;
+    border-bottom: 1px solid #f1b7b3;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+}
